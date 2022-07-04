@@ -117,15 +117,19 @@ market_pca_predictions_df
 
 pandas
 
+numpy
+
+holoviews
+
+Prophet
+
 hvplot
 
-Path
+datetime
 
-KMeans
+metaplotlib
 
-PCA
-
-StandardScaler
+panel
 
 ---
 
