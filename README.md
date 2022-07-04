@@ -35,13 +35,11 @@ Google.colab
 
 ## General information about analysis.
 
-First you need to  import the data (provided in the starter code) and prepare the data (provided in the starter code). After that you need to find the Best Value for k Using the Original Data.  Then you cluster cryptocurrencies with K-means Using the Original Data and optimize clusters with Principal Component Analysis.
+First you need to configure Google Colab workspace.  After configuring Google Colab try to find unusual patterns in hourly google search traffic.
 
-Then you will find the Best Value for k Using the PCA Data and cluster the cryptocurrencies with K-means using the PCA Data. Finally you visualize and compare the results.
+After that you mine the search traffic data for seasonality and try to find search traffic to stock price patterns.
 
-When comparing the results on the elbow curve, I still came up with 4 as the components to use but after optimizing the data using Principal Component Analysis the amount reduced significantly from 79.022 inertia to 49.665 inertia.  
-
-Also, comparing the scatter plots you notice that the grouping was much better compared to data without Principal Component Analysis applied to the data.
+Then you creat a time series model with Prophet and forecast revenue by using time series models.
 
 
 
@@ -52,61 +50,45 @@ Also, comparing the scatter plots you notice that the grouping was much better c
 
 ## Information about datasets
 
-Data frame for crypto market data:
+Data frame for trends in search history:
 
-df_market_data
+df_mercado_trends
 
-Data set using StandardScaler to normalize data:
+Data frame for May 2020 search history:
 
-scaled_data
+df_may_2020
 
-Create a data frame with Scaled Data:
+Create hvplot for day of week search trends:
 
-df_market_data_scaled
+mean_daily_traffic
 
-Create a data frame for the elbow curve plot:
+Create a data frame stock price:
 
-k, inertia, elbow data, df_elbow, df_elbow_plot
+df_mercado_stock
 
-Initalize K-Means and fit scaled data:
+Concatenate the stock price and search trend data frames:
 
-model
+mercado_stock_trends_df
 
-Predict clusters to group the cryptocurrencies:
+Adjust concatenated data frame to first half of 2020:
 
-k_4
+first_half_2020 
 
-Create data frame to display the results of the predictions:
+Create a prophet data frame for search trends:
 
-df_market_data_predictions
+mercado_prophet_df
 
-Plot the data frame to visualize the results of predictions:
+Plot data for components in search trend data frame:
 
-df_market_data_predictions_plot
+forecast_mercado_trends, figures_mercado_trends
 
-Create a PCA data frame to reduce to three components:
+Data frame for daily revenue:
 
-pca, market_pca_data, market_pca_df
+df_mercado_sales
 
-Create a data frame for the elbow curve plot for PCA data:
+Create a Prophet data frame for revenue:
 
-k, inertia, elbow data_1, df_elbow_1, df_elbow_1_plot
-
-Initalize K-Means and fit scaled data for PCA data:
-
-model
-
-Predict clusters to group the cryptocurrencies for PCA data:
-
-k_4a
-
-Create data frame to display the results of the predictions for PCA data:
-
-market_pca_predictions_df
-
-Plot the data frame to visualize the results of predictions for PCA data:
-
-market_pca_predictions_df
+mercado_sales_prophet_df
 
 
 
